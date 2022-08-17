@@ -6,6 +6,6 @@ const quotesController = require('../controllers/quotes.controller');
 
 
 
-router.get('/quote', quotesController.getQuote);
+router.get('/', quotesController.getQuote);
 
 module.exports = router;

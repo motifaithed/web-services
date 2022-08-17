@@ -8,7 +8,13 @@ const qoutesRoutes = require('./routes/quotes.routes');
 const app = express();
 const db = require('./data/database');
 
-app.use(qoutesRoutes);
+app.use('/quote', qoutesRoutes);
+
+app.use(function(error,req,res,next){
+    res.status(500).json({
+        message: 'something went wrong'
+    })
+});
 
 db.connectToDatabase().then(()=>{
     app.listen(3000);

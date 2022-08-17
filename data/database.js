@@ -7,7 +7,7 @@ let database;
 async function connect(){
   const client = await MongoClient.connect('mongodb://127.0.0.1:27017');
   //establish a connection to the database
-  database = client.db('quotes');
+  database = client.db('first-api');
 }
 
 function getDb(){
